@@ -16,16 +16,19 @@
 
 ### 3.启动上传服务
 ```shell
-# 复制.env，如果换端口可以改PORT，记得同时改油猴脚本里面的上传地址
+# 复制.env
+# 如果换端口可以改PORT，记得同时改油猴脚本里面的上传地址
+# 如果想上传至oss，请配置oss相关的变量
 cp .env.example .env
 # 安装依赖
-pnpm i
+yarn
 # 构建
-pnpm build
+yarn build
 # 运行
-pnpm start
+yarn start
 
 ```
 
-## 计划
-- [ ] 上传到阿里云oss
+## 特性
+- [*] 支持上传并生成外链
+- [*] 支持上传到阿里云oss并生成外链

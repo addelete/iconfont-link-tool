@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         use iconfont.cn
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       addelete
 // @match        /^https://www\.iconfont\.cn/manage/index.*manage_type=myprojects.*
@@ -56,16 +56,10 @@
                   data: formData,
                   success: function({data}) {
                       console.log(data) // 接收上传后的返回的iconfont url，可以复制或者别的使用方式
-                      $('.project-iconlist').before(`
-                      <div style="line-height: 2em; margin-top: 20px;">
-                      <p>
-                      <a href="${data.js}">${data.js}</a>
-                      </p>
-                      <p>
-                      <a href="${data.css}">${data.css}</a>
-                      </p>
-                      </div>
-                      `);
+                      if(!$('.url-list').get(0)) {
+                        $('.project-iconlist').before('<div class="url-list" style="line-height: 2em; margin-top: 20px;"></div>')
+                      }
+                      $('.url-list').html(`${data.map(item => `<a href="${item}">${item}</a>`).join('<br>')}`)
                   },
                   error: function(err) {
                       console.log("上传失败", err)
