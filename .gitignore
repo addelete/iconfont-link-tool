@@ -1,0 +1,11 @@
+node_modules/
+build/
+yarn.lock
+.vscode
+.swc
+.idea/
+package-lock.json
+pnpm-lock.yaml
+uploads/*
+.env
+build/

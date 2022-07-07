@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/"],
+  "watch": ["src"],
+  "execMap": {
+    "ts": "node -r swc-node/register"
+  },
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "json,ts"
+}
