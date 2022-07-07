@@ -1,5 +1,9 @@
 # 用于iconfont.cn生成外链的小工具
 
+## 预览效果
+
+![screen](https://github.com/addelete/iconfont-link-tool/blob/main/media/screen.png)
+
 ## 使用方法：
 
 ### 1.安装油猴管理器
