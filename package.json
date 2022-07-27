@@ -2,16 +2,19 @@
     "scripts": {
         "dev": "nodemon -x node -r @swc-node/register src/main.ts",
         "build": "swc src -d build",
-        "start": "node build/main.js"
+        "start": "node build/main.js",
+        "pm2:reload": "pm2 reload iconfont-server && pm2 save",
+        "pm2:start": "pm2 start build/main.js --name iconfont-server && pm2 save",
+        "pm2:stop": "pm2 stop iconfont-server && pm2 save"
     },
     "dependencies": {
         "@fastify/cors": "^8.0.0",
         "@fastify/static": "^6.4.0",
         "ali-oss": "^6.17.1",
-        "dotenv": "^16.0.1",
         "extract-zip": "^2.0.1",
         "fastify": "^4.2.0",
-        "fastify-file-upload": "^4.0.0"
+        "fastify-file-upload": "^4.0.0",
+        "yaml": "^2.1.1"
     },
     "devDependencies": {
         "@swc-node/register": "^1.5.1",
