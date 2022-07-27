@@ -139,7 +139,7 @@ app.post('/upload', async (req, reply) => {
 (async () => {
   try {
     await app.listen({
-      port: config?.PORT ? Number(config.PORT) : 8888,
+      port: config?.port ? Number(config.port) : 8888,
     });
   } catch (err) {
     app.log.error(err);
